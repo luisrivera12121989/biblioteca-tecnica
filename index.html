@@ -237,6 +237,29 @@ body.ab #ap{display:block}body.ab main{padding-bottom:140px}
 #wl .ac button{min-height:46px;padding:8px 18px;border-radius:14px;border:2px solid var(--y);background:#1b1b16;color:#fff;font-weight:600}
 #wl .ac .pri{background:var(--y);color:#15130a}
 #wl label{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:13px;color:#a8a79c}
+#cr{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(5,5,4,.78);backdrop-filter:blur(4px)}
+#cr.on{display:flex}
+#cr .cd{width:min(560px,100%);max-height:100%;overflow:auto;background:#12120f;color:#f1f0ea;border:2px solid var(--y);border-radius:22px;box-shadow:0 24px 70px rgba(0,0,0,.7);animation:wi .28s ease-out}
+#cr .hz{height:16px;background:repeating-linear-gradient(-45deg,var(--y) 0 16px,#111 16px 32px)}
+#cr .bd{padding:24px 24px 20px}
+#cr h2{font-size:30px;line-height:1.05;margin:0 0 8px;color:var(--y2)}
+#cr .by{color:#cfcec4;margin:0 0 18px;font-size:15px;line-height:1.5;max-width:none}
+#cr ul{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:12px}
+#cr li{display:flex;gap:12px;font-size:15px;line-height:1.45;align-items:flex-start}
+#cr li b{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:#1f1e17;color:var(--y2);border:1.5px solid #5a4a00;font-size:12px}
+#cr li b svg{width:18px;height:18px}
+#cr .ac{display:flex;gap:10px;flex-wrap:wrap}
+#cr .ac button{min-height:46px;padding:8px 18px;border-radius:14px;border:2px solid var(--y);background:#1b1b16;color:#fff;font-weight:600}
+#cr .ac .pri{background:var(--y);color:#15130a}
+#cr label{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:13px;color:#a8a79c}
+#cr .ac{margin-top:4px}
+#cr .sig{margin:6px 0 18px;color:#fff;font-size:15px;line-height:1.4}#cr .sig b{display:block;color:var(--y2);font:italic 700 24px/1.1 var(--fd),"Barlow Condensed",sans-serif}#cr .sig span{color:#cfcec4;font-size:14px}
+.credit{margin-top:18px;width:100%;display:flex;align-items:center;gap:16px;text-align:left;padding:16px 20px;border-radius:20px;border:2px solid var(--y);color:#fff;background:linear-gradient(135deg,#1b1a14,#0b0b09);box-shadow:0 8px 22px rgba(0,0,0,.4);cursor:pointer}
+.credit:hover{border-color:var(--y2);box-shadow:0 0 0 1px #000,0 0 22px rgba(244,189,22,.45)}
+.credit svg{flex:none;width:40px;height:40px;color:var(--y2);stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.credit b{display:block;font:700 clamp(18px,2vw,22px)/1.1 var(--fb);color:var(--y2)}
+.credit small{display:block;margin-top:3px;color:#d7d6cc;font-size:13.5px}
+.credit em{margin-left:auto;font-style:normal;font-size:22px;color:var(--y2)}
 @keyframes wi{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
 .logo-modal{position:fixed;inset:0;z-index:70;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.84);backdrop-filter:blur(5px)}
 .logo-modal.on{display:flex}
@@ -451,6 +474,20 @@ body.view798 #reader798Frame{display:block!important;position:fixed!important;in
   <div class="logo-caption"><b>Biblioteca Técnica CAEX 794 AC</b><span>Plataforma digital de estudio y consulta</span><small>Creada por Luis Rivera</small></div>
   </div>
 </div>
+<div id="cr" role="dialog" aria-modal="true" aria-labelledby="crt"><div class="cd"><div class="hz"></div><div class="bd">
+<h2 id="crt">Crédito del desarrollador</h2>
+<p class="by"><strong>¡Gracias por adquirir esta aplicación y confiar en este material técnico!</strong><br>Esta biblioteca ha sido creada por <strong>Luis Rivera</strong> con el propósito de apoyar, facilitar y fortalecer el aprendizaje de cada técnico que trabaja con estos equipos. Espero que esta herramienta sea un aporte real para tu desarrollo profesional, tu trabajo diario y la comprensión de los sistemas que componen los CAEX 794 AC y 798 AC.<br><br>Aquí encontrarás una recopilación técnica basada en los manuales de servicio, con contenido en español y sus ilustraciones, pensada para que puedas consultar, estudiar y comprender cada componente y sistema de manera práctica y sencilla.</p>
+<ul>
+<li><b><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></b><span>Busca por componente, medida o falla: «peso motor», «filtro hidráulico», «ISO 18/15».</span></li>
+<li><b><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></b><span>Escucha cualquier tema con el audiolibro mientras trabajas. Puedes pausar, cambiar la velocidad o saltar de párrafo.</span></li>
+<li><b>✓</b><span>Marca los temas que ya estudiaste para ver tu avance.</span></li>
+<li><b><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></b><span>Guarda tus temas favoritos con la estrella para volver a ellos rápido.</span></li>
+<li><b>EN</b><span>Activa el texto original en inglés cuando necesites comparar términos técnicos.</span></li>
+</ul>
+<p class="by"><strong>Este material es fruto del esfuerzo, la experiencia y el deseo de compartir conocimientos con todos aquellos que día a día trabajan con estos gigantes de la minería.</strong><br><br>Espero que esta biblioteca te sea útil, que te ayude a resolver dudas y que contribuya a seguir creciendo como profesional.<br><br>¡Muchas gracias por tu apoyo y por ser parte de este proyecto!</p>
+<p class="sig"><b>Luis Rivera</b><span>Creado por y para técnicos y técnicas.</span></p>
+<div class="ac"><button class="pri" id="crX">Cerrar</button></div>
+</div></div></div>
 <div id="ap" role="region" aria-label="Audiolibro">
 <div class="r"><button id="a_tp" title="Tema anterior" aria-label="Tema anterior">⏮</button><button id="a_pp" title="Párrafo anterior" aria-label="Párrafo anterior">⏪</button><button id="a_pl" class="pri" title="Reproducir / pausar" aria-label="Reproducir o pausar">▶</button><button id="a_np" title="Párrafo siguiente" aria-label="Párrafo siguiente">⏩</button><button id="a_tn" title="Tema siguiente" aria-label="Tema siguiente">⏭</button><button id="a_x" title="Cerrar audiolibro" aria-label="Cerrar audiolibro">✕</button></div>
 <div class="r"><select id="a_rt" aria-label="Velocidad"><option value="0.75">0,75×</option><option value="1">1×</option><option value="1.25">1,25×</option><option value="1.5">1,5×</option><option value="1.75">1,75×</option><option value="2">2×</option></select><select id="a_vo" aria-label="Voz"></select><label><input type="checkbox" id="a_ct"> Seguir con el siguiente tema</label></div>
@@ -986,6 +1023,27 @@ function render798Module(){
         article{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0 auto!important;padding:18px 14px 80px!important;overflow-wrap:anywhere}
         figure{max-width:100%!important}figure img{max-width:100%!important;height:auto!important}
       }
+
+      /* Acceso rápido 798: mismas imágenes de diseño que el menú rápido del 794 */
+      :root{--photo:url("./assets/img-1fde81b500362862.jpg")}
+      .qc{
+        position:relative;justify-content:flex-end;min-height:150px;padding:14px 10px 16px;overflow:hidden;
+        text-shadow:0 2px 8px #000;
+        background:linear-gradient(180deg,rgba(8,8,7,.18),rgba(8,8,7,.86) 78%),var(--photo) var(--pos,50% 50%)/var(--sz,320%) no-repeat!important;
+        box-shadow:0 0 0 1px rgba(0,0,0,.6),0 8px 20px rgba(0,0,0,.45);
+      }
+      .qc svg{filter:drop-shadow(0 2px 6px rgba(0,0,0,.7))}
+      .qc small{color:#ecebe2}
+      .qc:hover{border-color:#ffe27a;box-shadow:0 0 0 1px #000,0 0 22px rgba(244,189,22,.5)}
+      .qgrid .qc:nth-child(9n+1){--pos:8% 30%}
+      .qgrid .qc:nth-child(9n+2){--pos:92% 72%}
+      .qgrid .qc:nth-child(9n+3){--pos:70% 96%}
+      .qgrid .qc:nth-child(9n+4){--pos:40% 8%}
+      .qgrid .qc:nth-child(9n+5){--pos:62% 50%}
+      .qgrid .qc:nth-child(9n+6){--pos:20% 88%}
+      .qgrid .qc:nth-child(9n+7){--pos:86% 14%}
+      .qgrid .qc:nth-child(9n+8){--pos:48% 68%}
+      .qgrid .qc:nth-child(9n){--pos:30% 42%}
       </style>`)
     .replace('</body>', `
       <script>
@@ -1076,6 +1134,22 @@ render=function(){
   if(VIEW.t==="798"){render798Module();return}
   _libraryRender798();
 };
+
+/* Crédito del desarrollador (inicio) */
+(function(){
+ const CR=document.getElementById("cr");let last=null;
+ function crOpen(){last=document.activeElement;CR.classList.add("on");document.getElementById("crX").focus()}
+ function crClose(){CR.classList.remove("on");try{last&&last.focus()}catch(e){}}
+ document.getElementById("crX").onclick=crClose;
+ CR.addEventListener("click",e=>{if(e.target===CR)crClose()});
+ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&CR.classList.contains("on"))crClose()});
+ const _h=home;
+ home=function(){_h();const m=document.querySelector("#main");if(!m||m.querySelector(".credit"))return;
+  const b=document.createElement("button");b.type="button";b.className="credit";
+  b.setAttribute("aria-label","Crédito del desarrollador");
+  b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span><b>Crédito del desarrollador</b><small>Creada por Luis Rivera · para técnicos y técnicas</small></span><em aria-hidden="true">›</em>';
+  b.onclick=crOpen;m.appendChild(b)};
+})();
 
 boot();
 </script></body></html>
