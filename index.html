@@ -981,7 +981,7 @@ function render798Module(){
         header{flex:0 0 auto!important;width:100%!important;min-width:0!important}
         .wrap{display:flex!important;flex:1 1 auto!important;width:100%!important;height:auto!important;max-width:100%!important;min-width:0!important;min-height:0!important;overflow:visible!important}
         nav{position:fixed!important;left:0!important;top:0!important;bottom:0!important;width:min(88vw,340px)!important;max-width:88vw!important;flex:0 0 auto!important;transform:translateX(-102%);z-index:999!important;pointer-events:auto!important} main{position:relative!important;z-index:1!important}
-        nav.open{transform:translateX(0)!important}
+        body.nav nav{transform:translateX(0)!important}
         main{display:block!important;flex:1 1 0!important;width:100%!important;height:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
         article{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0 auto!important;padding:18px 14px 80px!important;overflow-wrap:anywhere}
         figure{max-width:100%!important}figure img{max-width:100%!important;height:auto!important}
@@ -990,6 +990,22 @@ function render798Module(){
     .replace('</body>', `
       <script>
         document.getElementById("back794")?.addEventListener("click",()=>parent.postMessage({type:"back-to-library-794"},"*"));
+        /* Navegación del índice: dentro de un iframe srcdoc los enlaces href="#tN"
+           no navegan, así que se resuelve el toque directamente con show(). */
+        (function(){
+          var list=document.getElementById("list");
+          if(!list)return;
+          list.addEventListener("click",function(e){
+            var a=e.target&&e.target.closest?e.target.closest("a[data-t]"):null;
+            if(!a||!list.contains(a))return;
+            var id=parseInt(a.getAttribute("data-t"),10);
+            if(isNaN(id))return;
+            e.preventDefault();
+            e.stopPropagation();
+            show(id);
+            document.body.classList.remove("nav");
+          },true);
+        })();
         const quick=document.createElement("button");
         quick.id="quickHome798"; quick.type="button"; quick.textContent="⌂ Inicio 798";
         quick.setAttribute("aria-label","Volver al inicio del lector 798 AC");
