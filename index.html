@@ -990,17 +990,22 @@ function render798Module(){
     .replace('</body>', `
       <script>
         document.getElementById("back794")?.addEventListener("click",()=>parent.postMessage({type:"back-to-library-794"},"*"));
-        /* Navegación del índice: dentro de un iframe srcdoc los enlaces href="#tN"
-           no navegan, así que se resuelve el toque directamente con show(). */
+        /* Dentro de un iframe srcdoc los enlaces "#..." recargan la página padre
+           (la biblioteca 794) dentro del iframe. Se interceptan TODOS en captura
+           y se resuelven con show(); además se anula el cambio de URL. */
         (function(){
-          var list=document.getElementById("list");
-          if(!list)return;
-          list.addEventListener("click",function(e){
-            var a=e.target&&e.target.closest?e.target.closest("a[data-t]"):null;
-            if(!a||!list.contains(a))return;
-            var id=parseInt(a.getAttribute("data-t"),10);
-            if(isNaN(id))return;
+          try{history.replaceState=function(){};history.pushState=function(){};}catch(err){}
+          document.addEventListener("click",function(e){
+            var a=e.target&&e.target.closest?e.target.closest("a[href^='#']"):null;
+            if(!a)return;
             e.preventDefault();
+            var id=a.getAttribute("data-t");
+            if(id===null||id===""){
+              var m=(a.getAttribute("href")||"").match(/^#t(\\d+)$/);
+              id=m?m[1]:null;
+            }
+            id=parseInt(id,10);
+            if(isNaN(id))return;
             e.stopPropagation();
             show(id);
             document.body.classList.remove("nav");
