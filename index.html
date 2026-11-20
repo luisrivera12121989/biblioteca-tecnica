@@ -254,6 +254,16 @@ body.ab #ap{display:block}body.ab main{padding-bottom:140px}
 #cr label{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:13px;color:#a8a79c}
 #cr .ac{margin-top:4px}
 #cr .sig{margin:6px 0 18px;color:#fff;font-size:15px;line-height:1.4}#cr .sig b{display:block;color:var(--y2);font:italic 700 24px/1.1 var(--fd),"Barlow Condensed",sans-serif}#cr .sig span{color:#cfcec4;font-size:14px}
+/* Consejo del día (inicio 794) */
+.quick .tipq{grid-column:1/-1;position:relative;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:4px 0 0;padding:18px 20px 18px 30px;border-radius:18px;border:2px solid var(--y);overflow:hidden;color:#fff;font-size:inherit;background:radial-gradient(520px 160px at 8% 0%,rgba(244,189,22,.20),transparent 70%),linear-gradient(135deg,#1c1b14,#0b0b09);box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.quick .tipq:before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:repeating-linear-gradient(-45deg,var(--y) 0 8px,#111 8px 16px)}
+.quick .tipq>svg{flex:none;width:52px;height:52px;padding:12px;border-radius:50%;color:#15130a;background:linear-gradient(180deg,var(--y2),var(--y));box-shadow:0 0 0 4px rgba(244,189,22,.22),0 4px 14px rgba(0,0,0,.5);stroke:currentColor}
+.quick .tipq>div{flex:1 1 260px;min-width:0}
+.quick .tipq b{display:block;font:800 14px/1 var(--fd);letter-spacing:.14em;text-transform:uppercase;color:var(--y2)}
+.quick .tipq p{margin:7px 0 0;font:italic 500 clamp(16px,1.7vw,19px)/1.4 var(--fb);color:#f3f2ec;max-width:none}
+.quick .tipq .tipn{flex:none;margin-left:auto;min-height:40px;padding:6px 16px;border-radius:999px;border:2px solid var(--y);background:#11110f;color:var(--y2);font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.quick .tipq .tipn:hover{background:var(--y);color:#15130a}
+@media(max-width:700px){.quick .tipq{padding:16px 14px 16px 24px;gap:12px}.quick .tipq>svg{width:44px;height:44px;padding:10px}.quick .tipq .tipn{width:100%;margin-left:0}}
 .credit{margin-top:18px;width:100%;display:flex;align-items:center;gap:16px;text-align:left;padding:16px 20px;border-radius:20px;border:2px solid var(--y);color:#fff;background:linear-gradient(135deg,#1b1a14,#0b0b09);box-shadow:0 8px 22px rgba(0,0,0,.4);cursor:pointer}
 .credit:hover{border-color:var(--y2);box-shadow:0 0 0 1px #000,0 0 22px rgba(244,189,22,.45)}
 .credit svg{flex:none;width:40px;height:40px;color:var(--y2);stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -516,7 +526,7 @@ const isFav=i=>!!(D.docs[i]&&FAV[D.docs[i].t]);
 function idx(){CATS=[];CI=[];D.docs.forEach((d,i)=>{let k=CATS.indexOf(d.c);if(k<0){k=CATS.length;CATS.push(d.c);CI.push([])}CI[k].push(i)})}
 const pct=ids=>ids.length?Math.round(ids.filter(i=>ok[i]).length/ids.length*100):0;
 const POS=["8% 30%","92% 72%","70% 96%","40% 8%","62% 50%","20% 88%","86% 14%","48% 68%","30% 42%"];
-const TIPS=["Tu compromiso y aprendizaje hacen la diferencia en cada turno.","Estudia un tema a la vez y márcalo como estudiado para ver tu avance.","Escucha un tema con el audiolibro mientras trabajas: puedes pausar y cambiar la velocidad.","Antes de intervenir un equipo, confirma siempre el procedimiento vigente."];
+const TIPS=["Tu compromiso y aprendizaje hacen la diferencia en cada turno.", "Estudia un tema a la vez y márcalo como estudiado para ver tu avance.", "Escucha un tema con el audiolibro mientras trabajas: puedes pausar y cambiar la velocidad.", "Antes de intervenir un equipo, confirma siempre el procedimiento vigente.", "Los acumuladores de dirección siguen cargados con el interruptor de arranque en ON: descarga la presión hidráulica antes de inspeccionar o intervenir.", "Para descargar los acumuladores de dirección del 794: apaga el interruptor de arranque de la cabina antes de desconectar la batería y deja la palanca de cambios en PARK.", "En el 798, desconecta la batería solo cuando los acumuladores estén completamente descargados y, en máquinas Tier 4, el DEF esté purgado.", "Apaga el interruptor maestro siempre que trabajes en un componente eléctrico del 798, tanto en el sistema de 24 VCC como en el de alto voltaje.", "No retires cubiertas que dejen expuestos componentes de alto voltaje mientras el motor esté en funcionamiento.", "Antes de intervenir el accionamiento eléctrico, sigue el procedimiento «Desconexión eléctrica y descarga de tensión» de la sección Solución de problemas.", "No conectes ni desconectes equipos eléctricos en atmósferas explosivas: puede provocar una explosión con riesgo de lesiones o muerte.", "Los acumuladores de dirección del 798 son de pistón, con nitrógeno y aceite, y se precargan a unos 6.550 kPa (950 psi) en el compartimiento de nitrógeno.", "El 798 tiene seis acumuladores de dirección, montados junto a los acumuladores de freno, cerca del tanque hidráulico.", "Los acumuladores guardan una reserva de aceite para la dirección si la bomba entrega poco flujo o nada, y absorben los picos de presión.", "La «purga térmica» mantiene menos de 28 °C (50 °F) de diferencia entre la HMU y el tanque, y evita que el volante quede pegado.", "La mayoría de los problemas eléctricos se deben a malas conexiones: revisa conectores y cableado antes de cambiar componentes.", "Revisa los códigos de diagnóstico justo antes de desconectar un conector y otra vez al reconectarlo: si cambian, sospecha de terminales sueltos o mal engarzados, humedad o corrosión.", "Usa la herramienta de crimpado 1U-5804 en conectores Deutsch HD y DT, y nunca sueldes los terminales a los cables.", "Para sacar cuñas de conectores DT usa la herramienta 147-6456; nunca hagas palanca con un destornillador.", "Mide con un arnés de derivación y nunca rompas el aislamiento de un cable para llegar al circuito.", "Si cortas un cable, instala siempre un terminal nuevo para la reparación.", "Los cables deben entrar a la cara del conector en ángulo perpendicular: revisa el recorrido del mazo.", "Ante un problema intermitente, prueba el circuito antes de desconectar nada: la prueba de movimiento del Cat ET puede ayudarte.", "Antes de corregir una falla, identifícala y defínela: parte con comprobaciones visuales, luego rendimiento y funcionamiento.", "Los códigos de evento avisan de una condición anormal: el ECM les asigna uno de tres niveles de advertencia, y cada nivel pide una respuesta del operador.", "En la lista de eventos del 798, los códigos con prefijo E son eventos; una X marca los activos y un guion (-) los registrados.", "En un código J1939, el SPN tiene entre 2 y 6 dígitos y el FMI va de 0 a 31. Pruébalo en la sección Códigos de falla.", "Si aparece el mensaje de apagado retardado del motor (DES), no lo anules: está avisando al operador.", "Los frenos de estacionamiento son húmedos: se aplican con resorte y se liberan hidráulicamente.", "Los frenos de servicio del 794 se usan para detener el camión cuando el retardador ya lo bajó a menos de unos 5 km/h (3 mph).", "En una emergencia, los frenos de servicio del 794 pueden detener un camión completamente cargado en una pendiente del 10 %.", "El freno del 794 lo controlan dos módulos, el ECM de frenos y el ECM del chasis, y la bomba de dirección carga sus acumuladores.", "El código ISO 4406 indica partículas por mL: cada paso duplica la cantidad, así que un número más alto significa aceite más sucio.", "Objetivos de limpieza: ISO 18/15 en hidráulico y dirección, ISO 16/13 en aceite de llenado e ISO 18/16/13 en combustible.", "En el ejemplo de la presentación, pasar de ISO 19/16 a ISO 16/13 baja la suciedad que circula por la bomba de 157,7 a 19,7 lb al año.", "Un filtro hidráulico obstruido deja pasar residuos que dañan otros componentes: respeta el programa de mantenimiento.", "Filtros Cat más análisis de fluidos S·O·S permiten detectar contaminantes a tiempo y ampliar los intervalos de drenaje.", "La placa superior de aluminio de una pieza del filtro Cat reduce el roscado cruzado: enrosca con cuidado y sin forzar.", "El aceite que se fuga por los pistones lubrica la carcasa de la bomba y vuelve al tanque por el puerto de drenaje (case drain).", "Dentro del depósito hidráulico del 794 están el difusor de retorno y el filtro de succión.", "El recinto del centro de servicio reúne manómetros de dirección, acumulador, elevación, freno delantero y válvula piloto de freno.", "El depósito hidráulico del 794 almacena 1.121 L (296 gal); con todo el sistema hidráulico son 1.458 L (385 gal).", "El tanque de combustible estándar del 794 almacena 4.922 L (1.300 gal) y el aceite del motor con filtro, 312 L (82,4 gal).", "Cada mando final del 794 lleva 254 L (67 gal) de aceite; confirma siempre la viscosidad en el Manual de Operación y Mantenimiento.", "Antes de izar un componente, confirma su peso: el retardador eléctrico del 794 pesa 1.724 kg.", "La bomba de lubricación automática está detrás de la cabina, en la plataforma; si falla, revisa primero que el depósito no esté vacío.", "La limitación de velocidad del eje trasero del 798 actúa hasta que el aceite de las transmisiones finales se caliente lo suficiente para lubricar los cojinetes.", "Busca por componente, medida o falla: «peso motor», «filtro hidráulico», «ISO 18/15».", "Marca los temas estudiados para ver tu avance y guarda con la estrella los que quieras volver a consultar rápido.", "Activa el texto en inglés (botón EN) cuando necesites comparar términos técnicos con el manual original."];
 function lastIdx(){try{const t=localStorage.getItem("last794");return D.docs.findIndex(d=>d.t===t)}catch(e){return -1}}
 function setV(v,cls,clr){VIEW=v;$("#main").className=cls||"panel";if(clr){const q=$("#q");if(q&&q.value)q.value="";LQ=null}}
 function toggleNav(){const o=$("#nav").classList.toggle("open");document.body.classList.toggle("lock",o);["#mb","#mb2"].forEach(s=>$(s).setAttribute("aria-expanded",String(o)))}
@@ -1044,6 +1054,21 @@ function render798Module(){
       .qgrid .qc:nth-child(9n+7){--pos:86% 14%}
       .qgrid .qc:nth-child(9n+8){--pos:48% 68%}
       .qgrid .qc:nth-child(9n){--pos:30% 42%}
+
+      /* Consejo del día 798: mismo diseño que el 794 */
+      .qa .tip{position:relative;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:16px;padding:18px 20px 18px 30px;border-radius:18px;border:2px solid #f4bd16;overflow:hidden;color:#fff;background:radial-gradient(520px 160px at 8% 0%,rgba(244,189,22,.20),transparent 70%),linear-gradient(135deg,#1c1b14,#0b0b09);box-shadow:0 10px 26px rgba(0,0,0,.45)}
+      .qa .tip:before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:repeating-linear-gradient(-45deg,#f4bd16 0 8px,#111 8px 16px)}
+      .qa .tip .tbd{flex:none;width:52px;height:52px;padding:12px;border-radius:50%;color:#15130a;background:linear-gradient(180deg,#ffd21a,#f4bd16);box-shadow:0 0 0 4px rgba(244,189,22,.22),0 4px 14px rgba(0,0,0,.5);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+      .qa .tip .tbx{flex:1 1 260px;min-width:0}
+      .qa .tip b{display:block;font:800 14px/1 'Barlow Condensed','Barlow',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#ffd21a}
+      .qa .tip p{margin:7px 0 0;max-width:none;color:#f3f2ec;font-style:italic;font-weight:500;font-size:clamp(16px,1.7vw,19px);line-height:1.4}
+      .qa .tip .tipn{flex:none;margin-left:auto;min-height:40px;padding:6px 16px;border-radius:999px;border:2px solid #f4bd16;background:#11110f;color:#ffd21a;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap}
+      .qa .tip .tipn:hover{background:#f4bd16;color:#15130a}
+      @media(max-width:700px){.qa .tip{padding:16px 14px 16px 24px;gap:12px}.qa .tip .tbd{width:44px;height:44px;padding:10px}.qa .tip .tipn{width:100%;margin-left:0}}
+      /* Botón Atrás dentro del lector 798 */
+      #backNav{border:2px solid #ffcd11;background:#11110f;color:#ffcd11;border-radius:999px;padding:7px 13px;font-weight:800;white-space:nowrap;flex:0 0 auto}
+      #backNav:hover:not(:disabled){background:#ffcd11;color:#111}
+      #backNav:disabled{opacity:.35;cursor:default}
       </style>`)
     .replace('</body>', `
       <script>
@@ -1068,6 +1093,49 @@ function render798Module(){
             show(id);
             document.body.classList.remove("nav");
           },true);
+        })();
+        /* Consejo del día (mismo diseño que el 794, 50 consejos) */
+        (function(){
+          var TIPS798=${JSON.stringify(TIPS)};
+          function enh(){
+            var t=document.querySelector(".qa .tip");
+            if(!t||t.getAttribute("data-enh"))return;
+            t.setAttribute("data-enh","1");
+            var i=Math.floor(Date.now()/864e5)%TIPS798.length;
+            t.innerHTML='<svg class="tbd" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>'
+              +'<div class="tbx"><b>Consejo del día</b><p></p></div>'
+              +'<button type="button" class="tipn">Otro consejo \u203A</button>';
+            var p=t.querySelector("p");p.textContent=TIPS798[i];
+            t.querySelector(".tipn").onclick=function(){i=(i+1)%TIPS798.length;p.textContent=TIPS798[i]};
+          }
+          var _r=renderHome;
+          renderHome=function(){var r=_r.apply(this,arguments);enh();return r};
+          enh();
+        })();
+        /* Historial interno: volver al tema o pantalla anterior sin salir del lector */
+        (function(){
+          var H=[],busy=false,MAX=60;
+          function key(){return (typeof cur==="number"&&cur>=0)?cur:"home"}
+          var _show=show,_home=renderHome;
+          var btn=document.createElement("button");
+          btn.id="backNav";btn.type="button";btn.textContent="\u21A9 Atr\u00E1s";
+          btn.title="Volver a lo \u00FAltimo que viste";btn.setAttribute("aria-label","Volver atr\u00E1s dentro del lector");
+          btn.disabled=true;
+          var menu=document.getElementById("menu");
+          if(menu&&menu.parentNode)menu.parentNode.insertBefore(btn,menu.nextSibling);
+          function upd(){btn.disabled=H.length===0}
+          function push(from){if(busy)return;if(H.length&&H[H.length-1]===from)return;H.push(from);if(H.length>MAX)H.shift();upd()}
+          show=function(id,p){var from=key();_show.apply(this,arguments);if(key()!==from)push(from)};
+          renderHome=function(){var from=key();_home.apply(this,arguments);if(from!=="home")push(from)};
+          btn.onclick=function(){
+            if(!H.length)return;
+            var to=H.pop();busy=true;
+            try{
+              if(to==="home"){document.body.classList.remove("nav");_home();var m=document.querySelector(".mod");if(m)m.classList.add("open")}
+              else{_show(to)}
+            }finally{busy=false}
+            upd();
+          };
         })();
         const quick=document.createElement("button");
         quick.id="quickHome798"; quick.type="button"; quick.textContent="⌂ Inicio 798";
@@ -1148,7 +1216,12 @@ render=function(){
   const b=document.createElement("button");b.type="button";b.className="credit";
   b.setAttribute("aria-label","Crédito del desarrollador");
   b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span><b>Crédito del desarrollador</b><small>Creada por Luis Rivera · para técnicos y técnicas</small></span><em aria-hidden="true">›</em>';
-  b.onclick=crOpen;m.appendChild(b)};
+  b.onclick=crOpen;m.appendChild(b);
+  const tq=m.querySelector(".quick .tipq");
+  if(tq&&!tq.querySelector(".tipn")&&typeof TIPS!=="undefined"){
+   const n=document.createElement("button");n.type="button";n.className="tipn";n.textContent="Otro consejo \u203A";
+   n.onclick=()=>{const p=tq.querySelector("p");let i=TIPS.indexOf(p.textContent);p.textContent=TIPS[(i+1)%TIPS.length]};
+   tq.appendChild(n)}};
 })();
 
 boot();
