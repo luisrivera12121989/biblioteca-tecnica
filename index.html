@@ -958,7 +958,7 @@ function render798Module(){
 
       #quickHome798{position:fixed;right:18px;bottom:18px;z-index:1000;border:2px solid #ffcd11;border-radius:999px;background:#11110f;color:#ffcd11;padding:11px 17px;font-weight:800;box-shadow:0 4px 22px #000b}
       #quickHome798:hover{background:#ffcd11;color:#111}
-      @media(max-width:760px){
+      @media(max-width:1024px){
         header{gap:6px;padding:8px}
         #back794{padding:6px 9px;font-size:12px}
         header h1 .brand,header h1 .vr{display:none}
@@ -974,14 +974,15 @@ function render798Module(){
         .ts a{padding:9px 10px!important}
         #quickHome798{right:12px;bottom:12px;padding:9px 13px;font-size:12px}
       }
-      @media(max-width:760px){
+      @media(max-width:1024px){
         html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
         body{display:flex!important;flex-direction:column!important}
         .wrap{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;overflow:hidden!important}
         nav{position:fixed!important;left:0!important;top:0!important;bottom:0!important;width:min(88vw,340px)!important;max-width:88vw!important;flex:none!important;transform:translateX(-102%);z-index:20!important}
         body.nav nav{transform:translateX(0)!important}
+        header,body,.wrap,main{width:100%!important;max-width:100%!important;min-width:0!important}
         main{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
-        article{width:100%!important;max-width:100%!important;min-width:0!important;margin:0 auto!important;padding:18px 14px 80px!important;overflow-wrap:anywhere}
+        article{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0 auto!important;padding:18px 14px 80px!important;overflow-wrap:anywhere}
         figure{max-width:100%!important}figure img{max-width:100%!important;height:auto!important}
       }
       </style>`)
