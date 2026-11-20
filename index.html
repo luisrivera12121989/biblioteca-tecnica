@@ -990,6 +990,19 @@ function render798Module(){
     .replace('</body>', `
       <script>
         document.getElementById("back794")?.addEventListener("click",()=>parent.postMessage({type:"back-to-library-794"},"*"));
+        /* Navegación del índice móvil: resolver el toque directamente y evitar
+           que un listener delegado o el cierre del menú lo intercepte. */
+        document.getElementById("nav")?.addEventListener("click",function(e){
+          const topic=e.target.closest("a[data-i]");
+          if(!topic)return;
+          const id=Number(topic.dataset.i);
+          if(!Number.isInteger(id))return;
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          open_(id);
+          closeNav();
+        },true);
         const quick=document.createElement("button");
         quick.id="quickHome798"; quick.type="button"; quick.textContent="⌂ Inicio 798";
         quick.setAttribute("aria-label","Volver al inicio del lector 798 AC");
